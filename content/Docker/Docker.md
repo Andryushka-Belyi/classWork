@@ -2,6 +2,24 @@
 
 ## Docker
 
+### Структура документа
+
+- [Знакомство. Получить и запустить Docker](#получить-docker)
+- [Быстрый старт](#быстрый-старт)
+  - [Hello, World](#hello-world)
+    - [Управление контейнером и образом, базовые команды](#управление-контейнером-и-образом-базовые-команды)
+    - [Установка и запуск из готового образа Nginx](#установка-и-запуск-из-готового-образа-nginx)
+    - [Готовые образы](/content/Docker/ImageLibrary/README.md)
+    - Полезные команды
+- Dockerfile
+- Docket Compose
+
+### Структура проекта
+  - [Готовые образы](/content/Docker/ImageLibrary/README.md)
+  - [Dockerfile](/content/Docker/DockerFile/README.md)
+  - [Docket Compose](/content/Docker/DockerCompose)
+  - []()
+
 ### Получить Docker
 
 - **Windows**
@@ -41,7 +59,11 @@
         - `systemctl enable --now docker`
         - `reboot`
 
-### Начало работы
+> Важно перезагрузить компьютер после включения WSL 2.0 и установки Docker!
+
+### Быстрый старт
+
+Начало работы
 
 Проверить Docker:
 ```shell
@@ -70,6 +92,8 @@ docker run hello-world
 
 > Эта команда загрузит образ, установит его, создаст и запустит контейнер и сразу остановит.
 
+#### Управление контейнером и образом, базовые команды
+
 Показать запущенные контейнеры:
 ```shell
 docker ps
@@ -78,6 +102,11 @@ docker ps
 Покзать все контейнеры, включая остановленные:
 ```shell
 docker ps -a
+```
+
+Показать загруженные Docker-образы
+```shell
+docker images
 ```
 
 Показать детальную информацию по выбранному образу
@@ -104,7 +133,7 @@ docker images
 docker rmi hello-world
 ```
 
-#### Nginx
+#### Установка и запуск из готового образа Nginx
 
 Установить контейнер **Nginx**
 ```shell
@@ -408,6 +437,7 @@ docker rm $(docker ps -aq)
 
 #### Контейнеры
 
+Удалить только остановленные контейнеры
 ```shell
 docker container prune
 ```
@@ -443,41 +473,9 @@ docker stop $(docker ps -q)
 docker image prune
 ```
 
-Удалить все неиспользуемые образы (те, на которые нет ссылок)
-```shell
-docker image prune
-```
 С подтверждением перед удалением
 ```shell
 docker image prune -a
 ```
 
 > На вопрос "Are you sure you want to continue?" ответьте 'y'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
