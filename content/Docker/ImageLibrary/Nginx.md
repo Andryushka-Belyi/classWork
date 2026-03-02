@@ -317,7 +317,7 @@ hollywood
 
 Открыть файл `index.html` для редактирования содержимого
 ```shell
-micro /usr/local/apache2/htdocs/index.html
+micro /usr/share/nginx/html/index.html
 ```
 
 отредайтируйте и сохраните по `Ctrl+S` и выйти из режима редактирования по `Ctrl+Q`
