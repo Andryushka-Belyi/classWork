@@ -1,6 +1,21 @@
 ## MongoDB (NoSQL)
 
-1. Запуск MongoDB
+Выполните все этапы работы с проектом по примеру с [Nginx](/content/Docker/ImageLibrary/Nginx.md)
+
+> Никогда в разработке не используйте русские имена файлов и каталогов!
+> Никогда в разработке не используйте пробелы и спец.символы в именах файлов и каталогов!
+
+1. Запуск **MongoDB**
+
+в **Windows**
+```shell
+docker run -d ^
+  --name my-mongo ^
+  -p 27017:27017 ^
+  mongo:latest
+```
+
+в **Linux Linux/WSL 2.0**
 ```shell
 docker run -d \
   --name my-mongo \
@@ -11,3 +26,5 @@ docker run -d \
 ```shell
 docker exec -it my-mongo mongosh
 ```
+
+Повыполняйте какие-нибудь команды в этой БД для проверки и пришлите скрины
