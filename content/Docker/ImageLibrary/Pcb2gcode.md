@@ -34,7 +34,7 @@ docker run --rm -p 8081:5000 -d ^
   ngargaud/insolante
 ```
 
-в **Linux Linux/WSL 2.0**
+в **Linux/WSL 2.0/Mac**
 ```shell
 docker run --rm -p 8081:5000 -d \
   -e URL=http://localhost \
@@ -49,3 +49,5 @@ docker run --rm -p 8081:5000 -d \
 Придумайте простой пароль, например 123 и войдите в админ-панель проекта
 
 [Docker-версия Pcb2gcode](https://hub.docker.com/r/ngargaud/insolante)`
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!

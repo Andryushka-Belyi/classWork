@@ -18,7 +18,7 @@ docker run -d ^
   adminer:latest
 ```
 
-Запустите **Adminer** в **Linux Linux/WSL 2.0**
+Запустите **Adminer** в **Linux/WSL 2.0/Mac**
 ```shell
 docker run -d \
   --name adminer \
@@ -37,3 +37,5 @@ docker run -d \
 - сервер: host.docker.internal
 - логин: postgres
 - пароль: mysecretpassword
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!

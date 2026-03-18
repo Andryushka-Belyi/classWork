@@ -15,7 +15,7 @@ docker run -d ^
   mongo:latest
 ```
 
-в **Linux Linux/WSL 2.0**
+в **Linux/WSL 2.0/Mac**
 ```shell
 docker run -d \
   --name my-mongo \
@@ -28,3 +28,5 @@ docker exec -it my-mongo mongosh
 ```
 
 Повыполняйте какие-нибудь команды в этой БД для проверки и пришлите скрины
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!

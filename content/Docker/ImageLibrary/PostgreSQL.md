@@ -16,7 +16,7 @@ docker run -d ^
   postgres:alpine
 ```
 
-в **Linux Linux/WSL 2.0**
+в **Linux/WSL 2.0/Mac**
 ```shell
 docker run -d \
   --name my-postgres \
@@ -44,3 +44,5 @@ SELECT version();
 ```sql
 exit
 ```
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!

@@ -19,7 +19,7 @@ docker run -d ^
   mysql:8
 ```
 
-в **Linux Linux/WSL 2.0**
+в **Linux/WSL 2.0/Mac**
 ```shell
 docker run -d \
   --name my-mysql \
@@ -50,3 +50,5 @@ SELECT version();
 ```sql
 exit
 ```
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!

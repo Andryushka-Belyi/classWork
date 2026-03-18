@@ -118,3 +118,5 @@ docker run -it --entrypoint bash ftxui-demo
 ```shell
 exit
 ```
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
