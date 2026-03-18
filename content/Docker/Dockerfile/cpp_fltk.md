@@ -93,7 +93,7 @@ docker run -it --rm `
   fltk-demo
 ```
 
-Создание и запуск контейнера в **Linux**
+Создание и запуск контейнера в **Linux/WSL 2.0/Mac**
 ```shell
 xhost +local:docker
 docker run -it --rm \
@@ -110,3 +110,5 @@ docker run -it --entrypoint bash fltk-demo
 ```shell
 exit
 ```
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!

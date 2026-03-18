@@ -41,3 +41,5 @@ docker rmi tleemcjr/metasploitable2
 ```
 
 [Metasploitable2 на Docker hub](https://hub.docker.com/r/tleemcjr/metasploitable2#!)
+
+> Если вы обнаружили ошибку в этом тексте - сообщите пожалуйста автору!
