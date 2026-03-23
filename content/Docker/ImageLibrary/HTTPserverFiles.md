@@ -11,7 +11,7 @@
 echo "Hello from HTTP server" > test.txt
 2. Запустите простой HTTP сервер
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name http-server ^

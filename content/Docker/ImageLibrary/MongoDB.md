@@ -7,7 +7,7 @@
 
 1. Запуск **MongoDB**
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name my-mongo ^

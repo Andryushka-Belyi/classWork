@@ -17,60 +17,8 @@ mkdir -p qt6-docker-app && touch qt6-docker-app/Dockerfile qt6-docker-app/main.c
 
 ### 2. Содержимое файла `Dockerfile`
 ```dockerfile
-# Используем последнюю LTS-версию Ubuntu
 FROM ubuntu:22.04
-
-# Отключаем интерактивные диалоги при установке пакетов
 ENV DEBIAN_FRONTEND=noninteractive
-
-# Устанавливаем зависимости:
-# - build-essential, cmake, ninja-build: инструменты сборки
-# - qt6-base-dev: заголовочные файлы и библиотеки Qt6 [citation:1][citation:5]
-# - libgl1-mesa-dev, libxcb-*-dev: зависимости для работы графики и OpenGL
-# - mesa-utils: полезно для диагностики (glxgears)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    cmake \
-    ninja-build \
-    qt6-base-dev \
-    libgl1-mesa-dev \
-    libxcb-xinerama0-dev \
-    libxcb-icccm4-dev \
-    libxcb-image0-dev \
-    libxcb-keysyms1-dev \
-    libxcb-randr0-dev \
-    libxcb-render-util0-dev \
-    libxcb-shape0-dev \
-    libxcb-sync-dev \
-    libxcb-xfixes0-dev \
-    libxcb-xkb-dev \
-    libxkbcommon-x11-dev \
-    mesa-utils \
-    && rm -rf /var/lib/apt/lists/*
-
-# Создаём рабочую директорию
-WORKDIR /app
-
-# Копируем исходный код и скрипт сборки
-COPY CMakeLists.txt main.cpp ./
-
-# Собираем приложение в отдельной папке build
-RUN cmake -B build -S . -G Ninja && \
-    cmake --build build --parallel
-
-# Указываем платформу для отрисовки (xcb для X11) [citation:1]
-ENV QT_QPA_PLATFORM=xcb
-
-# Приложение будет лежать в /app/build/qt6_app
-CMD ["./build/qt6_app"]
-```
-
-### Dockerfile v2
-```dockerfile
-FROM ubuntu:22.04
-
-ENV DEBIAN_FRONTEND=noninteractive
-
 # Устанавливаем всё необходимое для сборки и запуска Qt6 GUI
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -109,16 +57,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxkbcommon-x11-dev \
     mesa-utils \
     && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /app
-
 COPY CMakeLists.txt main.cpp ./
-
 RUN cmake -B build -S . -G Ninja && \
     cmake --build build --parallel
-
 ENV QT_QPA_PLATFORM=xcb
-
 CMD ["./build/qt6_app"]
 ```
 
@@ -152,15 +95,12 @@ int main(int argc, char *argv[])
 
 ### 5. Сборка и запуск
 
-В командной строке, находясь в папке `qt6-docker-app`, выполнить:
+В командной строке **VS Code+WSL**, находясь в папке `qt6-docker-app`, выполнить:
 ```shell
 docker build -t qt6-app .
 ```
 
-Создание и запуск контейнера для **Linux/WSL**
-```shell
-xhost +local:docker
-```
+Создание и запуск контейнера для **Windows - WSLg/WSL (терминал Ubutnu)**
 ```shell
 docker run -it --rm \
   -e DISPLAY=$DISPLAY \
@@ -168,24 +108,15 @@ docker run -it --rm \
   qt6-app
 ```
 
-Создание и запуск контейнера для **Windows/WSLg**
-
-В терминале Ubuntu (Ubuntu можно вызвать из Главного меню Windows) выполнить:
+Создание и запуск контейнера для **Linux**
 ```shell
 docker run -it --rm \
-  -e DISPLAY=host.docker.internal:0 \
+  -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   qt6-app
 ```
-или в Power Shell:
-```shell
-docker run -it --rm `
-  -e DISPLAY=:0 `
-  -v /tmp/.X11-unix:/tmp/.X11-unix:rw `
-  qt6-app
-```
 
-Создание и запуск контейнера для **macOS**
+Создание и запуск контейнера для **macOS** (не проверял!)
 ```shell
 xhost + 127.0.0.1
 ```

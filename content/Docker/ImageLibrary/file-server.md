@@ -9,7 +9,7 @@
 
 1. Запустить **simple-http-server** для раздачи файлов
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name file-server ^

@@ -23,7 +23,7 @@ netstat -tuln | grep :8082
 netstat -aon | findstr :8082
 ```
 
-Загрузка, создание и запуск контейнера с **cAdvisor** в **Windows**:
+Загрузка, создание и запуск контейнера с **cAdvisor** в **Windows  Powershell**:
 ```shell
 docker run -d `
   --volume=/:/rootfs:ro `
