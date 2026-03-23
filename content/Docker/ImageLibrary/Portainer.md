@@ -7,7 +7,7 @@
 
 ### Вариант с томами (с сохранением данных)
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name portainer ^

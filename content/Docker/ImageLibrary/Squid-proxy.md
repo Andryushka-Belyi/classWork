@@ -5,7 +5,7 @@
 
 1. Запустить Squid proxy
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name squid-proxy ^

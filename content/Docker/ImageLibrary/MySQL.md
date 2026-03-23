@@ -7,7 +7,7 @@
 
 1. Запуск **MySQL**
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name my-mysql ^

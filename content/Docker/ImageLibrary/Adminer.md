@@ -10,7 +10,7 @@
 > Перед созданием проекта убедитесь, что порт 8084 не занят другим приложением!
 
 
-Запустите **Adminer** в **Windows**
+Запустите **Adminer** в **Windows Powershell**
 ```shell
 docker run -d ^
   --name adminer ^

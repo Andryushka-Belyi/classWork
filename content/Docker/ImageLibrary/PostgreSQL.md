@@ -7,7 +7,7 @@
 
 Запуск PostgreSQL с паролем
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run -d ^
   --name my-postgres ^

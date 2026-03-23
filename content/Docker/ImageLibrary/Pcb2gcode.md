@@ -24,7 +24,7 @@ mkdir C:\insolante_data -Force
 
 Загружаем образ, создаём и запускаем контейнер:
 
-в **Windows**
+в **Windows Powershell**
 ```shell
 docker run --rm -p 8081:5000 -d ^
   -e URL=http://localhost ^
